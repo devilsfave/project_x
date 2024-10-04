@@ -1,0 +1,103 @@
+Develop the DermaVision AI React Native mobile app for skin lesion analysis, focusing primarily on the Android version. Follow these instructions, allowing for the integration of existing code for specific screens:
+
+1. Project Setup:
+   - Initialize the React Native project: npx react-native init DermaVisionAI --version 0.72.4
+   - Set up the specified directory structure
+   - Install all required dependencies using Yarn
+
+2. Environment Configuration:
+   - Configure Firebase, Google SDK, and Facebook SDK
+
+3. Existing Screens Integration:
+   For the following screens, prompt for existing code to be pasted:
+   - AnalysisScreen.js
+   - CameraScreen.js
+   - ConsentScreen.js
+   - EducationScreen.js
+   - HistoryScreen.js
+   - HomeScreen.js
+   - LoginScreen.js
+   - ProfileScreen.js
+   - RegisterScreen.js
+   - ResultsScreen.js
+
+   When reaching these screens during development, pause and request the existing code to be inserted.
+
+Additional Screens to Develop:
+The following screens need to be created from scratch:
+- AdminDashboardScreen.js: For user management and practitioner verification
+- MedicalPractitionerDashboardScreen.js: For appointment management by medical professionals
+- AppointmentBookingScreen.js: For users to book appointments
+- AppointmentsListScreen.js: To display and manage booked appointments
+- NearbyFacilitiesScreen.js: To show nearby health facilities using geolocation
+
+When developing these screens, ensure they integrate smoothly with the existing screens and overall app architecture. Implement the necessary functionality for each role (admin, medical practitioner, normal user) and include all required features as specified in the project requirements.
+
+4. Authentication:
+   - Implement AuthService.js for Firebase authentication
+   - Integrate multi-role user authentication and social sign-ins
+   - Use existing LoginScreen.js and RegisterScreen.js, adapting as necessary
+
+5. Navigation:
+   - Set up AppNavigator.js using React Navigation
+   - Implement role-based navigation flows
+
+6. Core Functionality:
+   - Use existing CameraScreen.js and ResultsScreen.js
+   - Implement image processing utilities
+   - Create placeholder for skin disease classification model
+
+7. User Management:
+   - Use existing ProfileScreen.js
+   - Develop AdminDashboardScreen.js and MedicalPractitionerDashboardScreen.js
+
+8. Appointment System:
+   - Implement AppointmentBookingScreen.js and AppointmentsListScreen.js
+   - Create AppointmentService.js
+
+9. Geolocation Features:
+   - Develop NearbyFacilitiesScreen.js
+   - Implement GeolocationService.js
+
+10. Data Management:
+    - Set up Firestore collections
+    - Implement FirestoreService.js for CRUD operations
+
+11. Offline Functionality:
+    - Implement local storage and Firebase offline persistence
+    - Create sync mechanism for offline data
+
+12. UI/UX:
+    - Ensure responsive design
+    - Implement loading indicators
+    - Create reusable UI components
+
+13. Error Handling and Validation:
+    - Implement throughout the app
+
+14. Testing:
+    - Set up Jest and write tests
+
+15. Performance Optimization:
+    - Optimize image processing and data handling
+
+16. Security:
+    - Implement authentication, authorization, and secure data practices
+
+17. Documentation:
+    - Write inline code documentation and create README.md
+
+18. Build and Deployment:
+    - Configure app signing for Android
+    - Prepare app store metadata
+
+Implementation Approach:
+- Develop features incrementally
+- Use Git for version control
+- Regularly test and debug
+- Conduct code reviews
+- Continuously refactor and optimize
+
+For each existing screen, integrate the provided code and ensure it fits within the overall architecture and functionality of the app. Adapt and refactor the existing code as necessary to maintain consistency and meet project requirements.
+
+Remember to handle edge cases, implement proper error handling, and ensure a smooth user experience throughout the development process. Regularly test on various devices to ensure compatibility and performance.

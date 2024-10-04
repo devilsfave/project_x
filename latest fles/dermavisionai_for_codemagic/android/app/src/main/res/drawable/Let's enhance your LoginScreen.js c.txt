@@ -1,0 +1,317 @@
+Let's enhance your LoginScreen.js code to incorporate input validation, password visibility toggle, and refine its UI/UX further. Here's the improved code:
+
+JavaScript
+import React, { useState } from 'react';
+import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text, ActivityIndicator, Image } from 'react-native';
+import { useAuth } from '../context/AuthContext';
+import { colors } from '../styles/colors';
+import { typography } from '../styles/typography';
+import Icon from 'react-native-vector-icons/MaterialIcons';   
+
+
+const LoginScreen = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);   
+
+  const [role, setRole] = useState('patient'); // Default to patient
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const { login, loginWithGoogle, loginWithFacebook } = useAuth();
+
+  const handleLogin = async () => {
+    // Basic input validation
+    if (!email || !password) {
+      setError('Please fill in all fields.');
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      setError(null);
+      await login(email, password, role); // Pass the role to the login function
+      navigation.navigate('HomeTabs');
+    } catch (err) {
+      setError(err.message || 'An error occurred during login.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const isValidEmail = (email) => {
+    // You can use a more robust email validation regex if needed
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Image
+        source={require('../assets/your_app_logo.png')} // Replace with your actual logo path
+        style={styles.logo}
+        resizeMode="contain"
+      />
+      <Text style={[typography.h2, { color: colors.text }]}>Welcome Back!</Text>
+
+      {/* Role Selection */}
+      <View style={styles.roleContainer}>
+        <Text>Select your role:</Text>
+        <TouchableOpacity onPress={() => setRole('patient')} style={[styles.roleButton, role === 'patient' && styles.selectedRole]}>
+          <Text style={styles.roleText}>Patient</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setRole('doctor')} style={[styles.roleButton, role === 'doctor' && styles.selectedRole]}>
+          <Text style={styles.roleText}>Doctor</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Email Address</Text>
+        <View style={styles.inputWrapper}>
+          <Icon name="email" size={24} color={colors.text} style={styles.inputIcon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your email"
+            value={email}
+            onChangeText={setEmail}
+            autoCapitalize="none"
+            keyboardType="email-address"   
+
+          />
+        </View>
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Password</Text>
+        <View style={styles.inputWrapper}>   
+
+          <Icon name="lock" size={24} color={colors.text} style={styles.inputIcon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry={!isPasswordVisible}
+          />
+          <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIcon}>   
+
+            <Icon name={isPasswordVisible ? 'visibility-off' : 'visibility'} size={20} color="gray" />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {error && <Text style={styles.errorText}>{error}</Text>}
+      <Button title="Login" onPress={handleLogin} disabled={isLoading} color={colors.primary} />
+      {isLoading && <ActivityIndicator style={styles.loader} color={colors.accent} />}
+
+      <View style={styles.socialLoginContainer}>
+        <Text style={styles.orText}>Or login with</Text>
+        <View style={styles.socialButtonsContainer}>
+          <TouchableOpacity style={styles.socialButton} onPress={loginWithGoogle}>
+            <Icon name="google" size={20} color={colors.text} style={styles.socialIcon} />
+            <Text>Google</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.socialButton} onPress={loginWithFacebook}>
+            <Icon name="facebook" size={20} color={colors.text} style={styles.socialIcon} />
+            <Text>Facebook</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+        <Text style={styles.signupLink}>Don't have an account? Sign up</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({   
+
+  // ... your existing styles
+  roleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 20,
+  },
+  roleButton: {
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: colors.lightBackground,
+  },
+  selectedRole: {
+    backgroundColor: colors.primary,
+  },
+  roleText: {
+    color: colors.text,
+  },
+  inputWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+  },
+  inputIcon: {
+    marginRight: 10,
+  },
+  passwordInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+  },
+  eyeIcon: {
+    padding: 10,
+  },
+});
+
+export default LoginScreen;
+Use code with caution.
+
+Key improvements
+
+Input Validation: Added basic validation to the email field.
+Password Visibility Toggle: Implemented a toggle to show/hide the password using an icon.
+UI Enhancements:
+Added an app logo placeholder.
+Used descriptive labels for input fields
+Wrapped input fields and icons in containers for better visual grouping
+Styled the role selection buttons
+Used colors from your colors.js and typography from typography.js for consistency
+
+THIS IS MY CODE 
+
+import React, { useState } from 'react';
+import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text, ActivityIndicator, Image } from 'react-native';
+import { useAuth } from '../context/AuthContext'; 
+import { colors } from '../styles/colors';
+import { typography } from '../styles/typography';
+import Icon from 'react-native-vector-icons/MaterialIcons'; // Import MaterialIcons
+
+const LoginScreen = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [role, setRole] = useState('patient'); // Default to patient
+
+  const { login } = useAuth(); 
+
+  const handleLogin = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      await login(email, password, role); // Pass the role to the login function
+      navigation.navigate('HomeTabs'); // Navigate to the main app flow after successful login
+    } catch (err) {
+      setError(err.message || 'An error occurred during login.'); // Error handling
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <Image 
+        source={require('../assets/your_app_logo.png')} // Replace with your actual logo path
+        style={styles.logo} 
+        resizeMode="contain"
+      /> 
+      <Text style={[typography.h2, { color: colors.text }]}>Welcome Back!</Text>
+
+      <View style={styles.roleContainer}>
+        <Text>Select your role:</Text>
+        <TouchableOpacity onPress={() => setRole('patient')} style={[styles.roleButton, role === 'patient' && styles.selectedRole]}>
+          <Text style={styles.roleText}>Patient</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setRole('doctor')} style={[styles.roleButton, role === 'doctor' && styles.selectedRole]}>
+          <Text style={styles.roleText}>Doctor</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Email Address</Text> 
+        <View style={styles.inputWrapper}>
+          <Icon name="email" size={24} color={colors.text} style={styles.inputIcon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your email"   
+            value={email}
+            onChangeText={setEmail}
+            autoCapitalize="none"
+            keyboardType="email-address"   
+          />
+        </View>
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Password</Text>
+        <View style={styles.inputWrapper}>
+          <Icon name="lock" size={24} color={colors.text} style={styles.inputIcon} />
+          <TextInput
+            style={styles.input}   
+            placeholder="Enter your password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+          />
+        </View>
+      </View>   
+
+      {error && <Text style={styles.errorText}>{error}</Text>} 
+      <Button title="Login" onPress={handleLogin} disabled={isLoading} color={colors.primary} /> 
+      {isLoading && <ActivityIndicator style={styles.loader} color={colors.accent} />} 
+
+      <View style={styles.socialLoginContainer}>
+        <Text style={styles.orText}>Or login with</Text>
+        <View style={styles.socialButtonsContainer}>
+          <TouchableOpacity style={styles.socialButton} onPress={loginWithGoogle}>
+            <Icon name="google" size={20} color={colors.text} style={styles.socialIcon} />
+            <Text>Google</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.socialButton} onPress={loginWithFacebook}>
+            <Icon name="facebook" size={20} color={colors.text} style={styles.socialIcon} />
+            <Text>Facebook</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+        <Text style={styles.signupLink}>Don't have an account? Sign up</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  // Existing styles...
+  roleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 20,
+  },
+  roleButton: {
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: colors.lightBackground,
+  },
+  selectedRole: {
+    backgroundColor: colors.primary,
+  },
+  roleText: {
+    color: colors.text,
+  },
+});
+
+export default LoginScreen;

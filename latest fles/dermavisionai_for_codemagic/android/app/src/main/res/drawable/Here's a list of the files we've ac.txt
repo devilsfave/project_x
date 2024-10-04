@@ -1,0 +1,67 @@
+Here's a list of the files we've actively worked on together:
+
+1.  **`App.tsx`**
+2.  **`src/context/AuthContext.js`**
+3.  **`src/navigation/AppNavigator.js`**
+4.  **`src/navigation/HomeTabs.js`** (You mentioned you created this one)
+5.  **`src/screens/AnalysisScreen.js`**
+6.  **`src/screens/ResultsScreen.js`**
+7.  **`src/screens/HomeScreen.js`**
+8.  **`src/screens/CameraScreen.js`**gpt
+9.  **`src/screens/LoginScreen.js`** gpt
+10. **`src/screens/SignupScreen.js`**gpt
+11. **`src/screens/HistoryScreen.js`**
+12. **`src/screens/EducationScreen.js`**
+13. **`src/screens/ProfileScreen.js`**
+14. **`src/screens/AppointmentBookingScreen.js`**
+15. **`src/screens/DoctorListScreen.js`** 
+16. **`src/services/FirestoreService.js`**
+17. **`src/ml/modelLoader.js`** 
+
+Feel free to ask if you need any specific code snippets or further assistance with any of these files! 
+
+
+
+src
+.
+|____components
+| |____CustomTabButton.js
+| |____ErrorBoundary.js
+| |____Layout.js
+|____context
+| |____AuthContext.js
+| |____ThemeContext.js
+|____ml
+| |____modelLoader.js
+|____navigation
+| |____AppNavigator.js
+| |____HomeTabs.js
+|____screens
+| |____AdminPanelScreen.js
+| |____AnalysisScreen.js
+| |____AppointmentBookingScreen.js
+| |____CameraScreen.js
+| |____ConsentScreen.js
+| |____DoctorListScreen.js
+| |____EducationScreen.js
+| |____GalleryScreen.js
+| |____HistoryScreen.js
+| |____HomeScreen.js
+| |____ImageDetail.js
+| |____LoginScreen.js
+| |____NearbyFacilitiesScreen.js
+| |____ProfileScreen.js
+| |____RegisterScreen.js
+| |____ResultsScreen.js
+| |____SignupScreen.js
+|____services
+| |____FirestoreService.js
+| |____GeolocationService.js
+|____styles
+| |____colors.js
+| |____responsive.js
+| |____typography.js
+|____types
+| |____types.ts
+|____utils
+| |____stn_model.js

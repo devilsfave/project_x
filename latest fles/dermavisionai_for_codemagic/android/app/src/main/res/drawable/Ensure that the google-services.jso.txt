@@ -1,0 +1,3 @@
+Ensure that the google-services.json file is correctly placed in the android/app/ directory and that it is properly configured in the Firebase Console. Verify that the webClientId in App.js matches the credentials in the google-services.json file.
+
+.bundle/config

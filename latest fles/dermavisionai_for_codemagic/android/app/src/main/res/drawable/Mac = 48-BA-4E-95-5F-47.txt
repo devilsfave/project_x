@@ -1,0 +1,7 @@
+Mac = 48-BA-4E-95-5F-47
+ProductID= WDC WD5000LPCX-60VHAT0
+ProductID Version= 01.01A01
+ProductID VendorID= 
+ProcessorID= BFEBFBFF000806E9
+Manufacturer= HP
+Product= 82AA

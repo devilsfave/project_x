@@ -1,0 +1,67 @@
+Here's a summary of the PowerShell commands you'll need to set up your environment and update your project:
+
+1. Update Node.js (if needed):
+   ```powershell
+   nvm install 20.17.0
+   nvm use 20.17.0
+   ```
+
+2. Update npm (if needed):
+   ```powershell
+   npm install -g npm@10.8.2
+   ```
+
+3. Install/Update Yarn:
+   ```powershell
+   npm install -g yarn@3.6.4
+   ```
+
+4. Update Expo CLI:
+   ```powershell
+   npm install -g expo-cli@6.3.10
+   ```
+
+5. Navigate to your project directory:
+   ```powershell
+   cd path\to\your\project
+   ```
+
+6. Update project dependencies:
+   ```powershell
+   expo install react@18.2.0 react-native@0.74.5 react-native-gesture-handler@~2.16.1 react-native-reanimated@~3.10.1 react-native-safe-area-context@4.10.5 react-native-screens@3.31.1 @react-native-community/netinfo@11.3.1 @types/react@~18.2.79 typescript@~5.3.3
+   ```
+
+7. Install updated dependencies:
+   ```powershell
+   yarn install
+   ```
+   or
+   ```powershell
+   npm install
+   ```
+
+8. Clear Metro bundler cache:
+   ```powershell
+   npx react-native start --reset-cache
+   ```
+
+9. Set up Android environment variables:
+   ```powershell
+   [System.Environment]::SetEnvironmentVariable("ANDROID_HOME", "C:\Path\To\Android\Sdk", "User")
+   [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools", "User")
+   ```
+
+10. Install JDK 17 or later (if not already installed)
+
+11. Install Android Studio (if not already installed)
+
+12. Rebuild and run your Android app:
+    ```powershell
+    npx expo run:android
+    ```
+
+Remember to replace "C:\Path\To\Android\Sdk" with the actual path to your Android SDK.
+
+After running these commands, restart your PowerShell session for the environment variable changes to take effect. Also, you may need to restart your computer for some changes to be fully applied.
+
+If you encounter any issues or need help with specific steps, please let me know.

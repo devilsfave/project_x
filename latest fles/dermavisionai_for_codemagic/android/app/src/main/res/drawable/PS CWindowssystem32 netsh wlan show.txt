@@ -1,0 +1,45 @@
+PS C:\Windows\system32> netsh wlan show profile Home_Net key=clear
+
+Profile Home_Net on interface Wi-Fi 3:
+=======================================================================
+
+Applied: All User Profile
+
+Profile information
+-------------------
+    Version                : 1
+    Type                   : Wireless LAN
+    Name                   : Home_Net
+    Control options        :
+        Connection mode    : Connect automatically
+        Network broadcast  : Connect only if this network is broadcasting
+        AutoSwitch         : Do not switch to other networks
+        MAC Randomization  : Disabled
+
+Connectivity settings
+---------------------
+    Number of SSIDs        : 1
+    SSID name              : "Home_Net"
+    Network type           : Infrastructure
+    Radio type             : [ Any Radio Type ]
+    Vendor extension          : Not present
+
+Security settings
+-----------------
+    Authentication         : WPA2-Personal
+    Cipher                 : CCMP
+    Authentication         : WPA2-Personal
+    Cipher                 : GCMP
+    Security key           : Present
+    Key Content            : Ozymandias_0823
+
+Cost settings
+-------------
+    Cost                   : Unrestricted
+    Congested              : No
+    Approaching Data Limit : No
+    Over Data Limit        : No
+    Roaming                : No
+    Cost Source            : Default
+
+PS C:\Windows\system32>

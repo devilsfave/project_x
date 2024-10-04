@@ -1,0 +1,81 @@
+PS C:\Users\GASMILA\Documents\TASKFLOW 2\TaskFlow> yarn run jest
+yarn run v1.22.22
+warning package.json: No license field
+$ "C:\Users\GASMILA\Documents\TASKFLOW 2\TaskFlow\node_modules\.bin\jest"
+
+
+ FAIL  __tests__/TaskItem.test.js
+
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    SyntaxError: C:\Users\GASMILA\Documents\TASKFLOW 2\TaskFlow\node_modules\@react-native\js-polyfills\error-guard.js: Missing semicolon. (14:4)
+
+      12 | let _inGuard = 0;
+      13 |
+    > 14 | type ErrorHandler = (error: mixed, isFatal: boolean) => void;
+         |     ^
+      15 | type Fn<Args, Return> = (...Args) => Return;
+      16 |
+      17 | /**
+
+      at constructor (node_modules/@babel/parser/lib/index.js:349:19)
+      at Parser.raise (node_modules/@babel/parser/lib/index.js:3247:19)
+      at Parser.semicolon (node_modules/@babel/parser/lib/index.js:3573:10)
+      at Parser.parseExpressionStatement (node_modules/@babel/parser/lib/index.js:12739:10)      
+      at Parser.parseStatementContent (node_modules/@babel/parser/lib/index.js:12354:19)
+      at Parser.parseStatementLike (node_modules/@babel/parser/lib/index.js:12217:17)
+      at Parser.parseModuleItem (node_modules/@babel/parser/lib/index.js:12194:17)
+      at Parser.parseBlockOrModuleBlockBody (node_modules/@babel/parser/lib/index.js:12770:36)   
+      at Parser.parseBlockBody (node_modules/@babel/parser/lib/index.js:12763:10)
+      at Parser.parseProgram (node_modules/@babel/parser/lib/index.js:12091:10)
+      at Parser.parseTopLevel (node_modules/@babel/parser/lib/index.js:12081:25)
+      at Parser.parse (node_modules/@babel/parser/lib/index.js:13893:10)
+      at parse (node_modules/@babel/parser/lib/index.js:13927:38)
+      at parser (node_modules/@babel/core/lib/parser/index.js:41:34)
+          at parser.next (<anonymous>)
+      at normalizeFile (node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)     
+          at normalizeFile.next (<anonymous>)
+      at run (node_modules/@babel/core/lib/transformation/index.js:21:50)
+          at run.next (<anonymous>)
+      at transform (node_modules/@babel/core/lib/transform.js:22:33)
+          at transform.next (<anonymous>)
+      at evaluateSync (node_modules/gensync/index.js:251:28)
+      at sync (node_modules/gensync/index.js:89:14)
+      at stopHiding - secret - don't use this - v1 (node_modules/@babel/core/lib/errors/rewrite-stack-trace.js:47:12)
+      at transformSync (node_modules/@babel/core/lib/transform.js:42:76)
+      at ScriptTransformer.transformSource (node_modules/@jest/transform/build/ScriptTransformer.js:545:31)
+      at ScriptTransformer._transformAndBuildScript (node_modules/@jest/transform/build/ScriptTransformer.js:674:40)
+      at ScriptTransformer.transform (node_modules/@jest/transform/build/ScriptTransformer.js:726:19)
+      at Object.<anonymous> (node_modules/react-native/jest/setup.js:316:6)
+
+
+
+ FAIL  __tests__/test-utils.js
+
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.

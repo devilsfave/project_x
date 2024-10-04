@@ -1,0 +1,15 @@
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git status
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ cd dermavisionai
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git status
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git add src/services/FINAL-TRIAL-DERMAVISION.code-workspace
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git commit -m "Add VS Code workspace file
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git push
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git remote add origin https://github.com/devilsfave/FINAL-TRIAL-DERMAVISION.git
+git push -u origin main
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git fetch origin
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git status
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git pull --rebase origin main
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ cd ..
+itpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ zip -r FINAL-TRIAL-DERMAVISION.zip .
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git fetch origin
+gitpod /workspace/FINAL-TRIAL-DERMAVISION (main) $ git status

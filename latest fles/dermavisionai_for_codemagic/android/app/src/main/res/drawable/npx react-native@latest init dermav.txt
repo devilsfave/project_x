@@ -1,0 +1,23 @@
+
+
+
+yarn add react-navigation
+yarn add @react-navigation/native
+yarn add @react-navigation/native-stack
+yarn add react-native-firebase
+yarn add redux
+yarn add react-redux
+yarn add react-native-async-storage
+yarn add @react-native-firebase/auth
+yarn add @react-native-firebase/firestore
+yarn add @react-native-firebase/messaging
+yarn add expo-camera
+yarn add expo-file-system
+yarn add expo-image-manipulator
+yarn add expo-notifications
+yarn add react-native-calendar-events
+yarn add react-native-geolocation-service
+yarn add react-native-paper
+yarn add react-native-vector-icons
+yarn add @react-native-async-storage/async-storage@1.23.1
+yarn add @react-native-community/netinfo@11.3.1

@@ -1,0 +1,9 @@
+### **E-commerce Definition:**
+E-commerce (electronic commerce) is the process of buying, selling, or exchanging products, services, or information over electronic systems, primarily the internet. It typically involves online transactions between businesses and consumers or between businesses.
+
+### **E-business Definition:**
+E-business (electronic business) refers to conducting all aspects of business activities using electronic communication technologies. This includes not only buying and selling but also servicing customers, collaborating with business partners, and managing internal processes like production, inventory, and logistics.
+
+### **Difference Between E-commerce and E-business:**
+- **E-commerce** is a subset of e-business that focuses specifically on online transactions (buying and selling).
+- **E-business** encompasses a broader range of activities that include all business operations conducted electronically, which can include e-commerce but also includes customer relationship management (CRM), enterprise resource planning (ERP), and internal business processes.

@@ -1,0 +1,38 @@
+Here’s your revised prompt without the BERT reference and with the updated accuracy requirement to reach at least 95% accuracy:
+
+
+
+Revised Prompt for Claude AI:
+
+I have sent you an earlier prompt regarding training a skin disease diagnosis model using a Spatial Transformer Network (STN) in TensorFlow, which reached around 80% accuracy. You made some modifications to sections of the code. Now, I would like a complete Jupyter notebook script that incorporates all the changes you suggested, with no missing details or sections for me to fill in. Here are the specific requirements:
+
+ Requirements:
+1. No Missing Code: I need a complete, readytorun Jupyter notebook with no placeholders for me to fill in. Include all necessary details from dataset loading to training and saving, referencing the structure of the current notebook I provided.
+
+2. Saving Progress to Google Drive:
+    I have limited Google Colab runtime, and the session may end abruptly, resulting in a loss of progress and files.
+    Add a feature that automatically saves checkpoints (models and progress) to my mounted Google Drive at frequent intervals. Ensure no progress is lost when runtime ends.
+    Include a section that mounts Google Drive at the start of the notebook.
+
+3. Preprocessing & Data Augmentation:
+    Maintain the same data augmentation techniques (horizontal/vertical flip, rotation, zoom, shear).
+    Use all datasets we’ve worked with, including the HAM10000 dataset and any additional datasets you think are useful for boosting accuracy and model generalization.
+
+4. Model Improvements:
+    Continue using the Spatial Transformer Network (STN) for feature localization.
+    Keep the optimizer as Adam but finetune learning rates, batch size, and other hyperparameters to maximize performance.
+    If you believe other models such as ResNet, EfficientNet, or similar CNNbased architectures can improve performance, feel free to suggest or incorporate them to improve accuracy and generalization.
+    Implement early stopping, learning rate reduction, and model checkpointing as before, but optimize these strategies for best performance.
+    Target 95% accuracy or higher in the final model. Use up to 80 epochs, but stop training early if the desired accuracy or a validation loss of 0.1 is reached.
+
+5. Training & Validation:
+    Ensure proper train/validation split (80% train, 20% validation).
+    Include metrics tracking for both training and validation accuracy/loss.
+
+6. Colab Runtime Constraints:
+    Since Colab sessions can terminate unexpectedly, ensure that the notebook is wellstructured to automatically resume training from the last saved checkpoint if interrupted.
+
+ Summary:
+Please generate a complete Jupyter notebook with these settings, ensuring that it is fully organized and optimized for Colab usage. This notebook should require no additional inputs or code from me and should be able to train the model to at least 95% accuracy.
+
+
